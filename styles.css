@@ -1,0 +1,49 @@
+body{
+  background-image: url(https://img.freepik.com/fotos-gratis/ceu-azul-com-nuvens_1232-936.jpg?w=2000) ;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+body img{
+  position: absolute;
+  animation: nuvem 25s infinite linear;
+}
+
+body .nuvem2{
+  position: absolute;
+  top: 100px!important;
+  left: -25%;
+  animation: nuvem 25s infinite linear 4s;
+}
+
+body .nuvem3{
+  position: absolute;
+  top: 20px!important;
+  left: -25%;
+  animation: nuvem 25s infinite linear 7s;
+}
+
+@keyframes nuvem {
+  0%{
+    left: -25%;
+    top: 0px
+  }
+  30%{
+    top:50px
+  }
+  50%{
+    top: 15px
+  }
+  100%{
+    left: 100%;
+    top:0px
+  }
+}
+
+@media (max-width:800px) {
+  body{
+    background-image: url(https://gifs.eco.br/wp-content/uploads/2021/10/imagens-e-gifs-do-ceu-azul-19.gif);
+  }
+}
