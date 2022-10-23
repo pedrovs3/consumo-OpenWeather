@@ -1,4 +1,6 @@
-const APIkey = '379ea8d330a1373f50840b2a23f50de6'
+import env from '../../env.js'
+
+const APIkey = env.API_KEY
 
 import './components/MainCard.js'
 
