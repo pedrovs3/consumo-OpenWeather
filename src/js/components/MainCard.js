@@ -63,6 +63,9 @@ class MainCard extends HTMLElement {
         if (nameAtr == 'city-name') {
             this.cityName = newValue
         }
+        if (nameAtr == 'conditions-status'){
+            this.conditionStatus = newValue;
+        }
     }
 
     styles() {
