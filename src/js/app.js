@@ -1,5 +1,7 @@
 const APIkey = '379ea8d330a1373f50840b2a23f50de6'
 
+import './components/MainCard.js'
+
 const fetchLocalizacao = async (pesquisa = 'luanda') => {
   const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${pesquisa}&limit=2&appid=${APIkey}`)
   const data = await response.json()
@@ -24,20 +26,18 @@ const fetchAPI = async () => {
 
 const main = document.querySelector('.a')
 
-const principal = async () => {
-  const data = await fetchAPI()
-  const data1 = await fetchLocalizacao()
-  console.log(data1[0])
-  
-  const h2 = document.createElement('h2')
-  h2.textContent = data1[0].name
-  main.append(data.weather[0].description)
-  main.appendChild(h2);
-}
+// const principal = async () => {
+//   const data = await fetchAPI()
+//   const data1 = await fetchLocalizacao()
+//   console.log(data1[0])
+//
+//   const h2 = document.createElement('h2')
+//   h2.textContent = data1[0].name
+//   main.append(data.weather[0].description)
+//   main.appendChild(h2);
+// }
 
-principal()
-
-
+//principal()
 
 // const data = await fetchAPI();
 // console.log(data)
