@@ -3,43 +3,10 @@ import env from '../../env.js'
 const APIkey = env.API_KEY
 
 import './components/MainCard.js'
-
-const fetchLocalizacao = async (pesquisa = 'luanda') => {
-  const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${pesquisa}&limit=2&appid=${APIkey}`)
-  const data = await response.json()
-  return data;
-}
-
-const fetchAPI = async () => {
-  const geolocation = await fetchLocalizacao();
-  const lat = geolocation[0].lat
-  const lon = geolocation[0].lon
-  const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=pt_br&units=metric&appid=${APIkey}`)
-  const data = await response.json()
-  console.log(data)
-  return data;
-};
-
-// navigator.geolocation.getCurrentPosition(function(position) {
-//   const lat = position.coords.latitude;
-//   const lon = position.coords.longitude;
-//   console.log(position)
-// });
+import fetchWeather from "./apis/fetchWeather.js";
 
 const main = document.querySelector('.a')
 
-// const principal = async () => {
-//   const data = await fetchAPI()
-//   const data1 = await fetchLocalizacao()
-//   console.log(data1[0])
-//
-//   const h2 = document.createElement('h2')
-//   h2.textContent = data1[0].name
-//   main.append(data.weather[0].description)
-//   main.appendChild(h2);
-// }
+const search = 'luanda'
 
-//principal()
-
-// const data = await fetchAPI();
-// console.log(data)
+console.log(await fetchWeather(search));
