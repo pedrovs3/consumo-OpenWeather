@@ -7,6 +7,8 @@ import './weatherCard.js';
 const cardsContainer = document.querySelector('.cards-container');
 
 const form = document.querySelector('form')
+let closeCities = [];
+let cont;
 
 let lat = -23.5325;
 let lon = -46.7917;
@@ -21,24 +23,21 @@ form.addEventListener('submit', async (e) => {
 
 	const cleanDiv = () => {
 		cardsContainer.innerHTML = '';
-		closeCities = closeCities.slice(9, -1);
-		console.log(closeCities)
 	}
 
-	cont = 0;
+	cont = 1;
 	while (cont <= 8) {
 		lat *= Number(`1.00${cont}`);
-		console.log(lat)
 		lon *= Number(`1.00${cont}`);
 		closeCities.push(await getCloseCities(lat, lon));
 		cont++;
 	}
 
-	if(cardsContainer.childElementCount >= 8 || closeCities.length === 8) {
+	if(cardsContainer.childElementCount >= 8 || closeCities.length >= 8) {
 		cleanDiv();
 	}		
 
-	closeCities.forEach(city => {
+	closeCities.reverse().forEach(city => {
 		createCitiesCards(city.name, city.main.temp, city.weather[0].icon);
 	});
 
@@ -49,10 +48,6 @@ const fetchApi = async (search = 'Osasco') => {
 	const geolocation = await fetchLocalization(search)
 	return geolocation;
 }
-
-let closeCities = [];
-let cont = 1;
-
 
 console.log(closeCities)
 

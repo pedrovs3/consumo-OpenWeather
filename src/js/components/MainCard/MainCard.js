@@ -67,14 +67,14 @@ class MainCard extends HTMLElement {
         const minTemp = document.createElement('span')
         minTemp.textContent = `${this.minTemp.slice(0,2).replace('.', '')}°C`
         const imgMinTempo = document.createElement('img')
-        imgMinTempo.src = '../../../../src/assets/img/minTemp.png'
+        imgMinTempo.src = './src/assets/img/minTemp.png'
 
         const divMaxTemp = document.createElement('div')
         divMaxTemp.classList.add('temps__max')
         const maxTemp = document.createElement('span')
         maxTemp.textContent = `${this.maxTemp.slice(0,2).replace('.', '')}°C`
         const imgMaxTempo = document.createElement('img')
-        imgMaxTempo.src = '../../../../src/assets/img/maxTemp.png'
+        imgMaxTempo.src = './src/assets/img/maxTemp.png'
 
         // Terceira coluna
 

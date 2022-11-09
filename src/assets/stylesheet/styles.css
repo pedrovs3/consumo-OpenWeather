@@ -142,6 +142,26 @@ body .nuvem3{
   color: white;
 }
 
+.rain-cloud {
+  position: absolute;
+  left: 0;
+  top: -7rem;
+  z-index: -1;
+  animation: cloudAnimation 60s infinite;
+}
+
+@keyframes cloudAnimation {
+  0% {
+    transform: translateX(-25rem);
+  }
+  50% {
+    transform: translateX(0rem);
+  }
+  100% {
+    transform: translateX(-25rem);
+  }
+}
+
 @keyframes nuvem {
   0%{
     left: -25%;
