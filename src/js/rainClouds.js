@@ -13,5 +13,5 @@ export const createClouds = () => {
     if (cloud.style.width < 30)
         cloud.style.width = '30%';
 
-    // container.appendChild(cloud);
+    container.appendChild(cloud);
 }

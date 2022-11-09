@@ -22,6 +22,7 @@ form.addEventListener('submit', async (e) => {
 	const cleanDiv = () => {
 		cardsContainer.innerHTML = '';
 		closeCities = closeCities.slice(9, -1);
+		console.log(closeCities)
 	}
 
 	cont = 0;
@@ -33,7 +34,7 @@ form.addEventListener('submit', async (e) => {
 		cont++;
 	}
 
-	if(cardsContainer.childElementCount >= 8) {
+	if(cardsContainer.childElementCount >= 8 || closeCities.length === 8) {
 		cleanDiv();
 	}		
 
@@ -80,7 +81,6 @@ changeBackground();
 
 let place = await getCloseCities(lat, lon);
 
-console.log(place)
 let numberClouds = 0;
 
 if (place.weather[0].main.toLowerCase() == 'clouds')

@@ -56,7 +56,7 @@ class MainCard extends HTMLElement {
 
         const temp = document.createElement('h3')
         temp.classList.add('temp-atual')
-        temp.textContent = `${this.tempAtual.slice(0,2)}°C`
+        temp.textContent = `${this.tempAtual.slice(0,2).replace('.', '')}°C`
 
 
         const divTemps = document.createElement('div')
@@ -65,14 +65,14 @@ class MainCard extends HTMLElement {
         const divMinTemp = document.createElement('div')
         divMinTemp.classList.add('temps__min')
         const minTemp = document.createElement('span')
-        minTemp.textContent = `${this.minTemp.slice(0,3)}°C`
+        minTemp.textContent = `${this.minTemp.slice(0,2).replace('.', '')}°C`
         const imgMinTempo = document.createElement('img')
         imgMinTempo.src = '../../../../src/assets/img/minTemp.png'
 
         const divMaxTemp = document.createElement('div')
         divMaxTemp.classList.add('temps__max')
         const maxTemp = document.createElement('span')
-        maxTemp.textContent = `${this.maxTemp.slice(0,2)}°C`
+        maxTemp.textContent = `${this.maxTemp.slice(0,2).replace('.', '')}°C`
         const imgMaxTempo = document.createElement('img')
         imgMaxTempo.src = '../../../../src/assets/img/maxTemp.png'
 

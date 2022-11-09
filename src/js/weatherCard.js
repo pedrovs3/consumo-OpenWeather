@@ -78,7 +78,7 @@ class WeatherCard extends HTMLElement{
     elementIcon.classList.add('card-photo');
 
     const elementDegree = document.createElement('span');
-    elementDegree.textContent = `${this.locationDegree.slice(0,2)}°C`;
+    elementDegree.textContent = `${this.locationDegree.slice(0,2).replace('.', '')}°C`;
     elementDegree.classList.add('card-degree');
 
     const elementName = document.createElement('span');
