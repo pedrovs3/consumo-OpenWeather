@@ -67,14 +67,16 @@ class MainCard extends HTMLElement {
         const minTemp = document.createElement('span')
         minTemp.textContent = `${this.minTemp.slice(0,2).replace('.', '')}°C`
         const imgMinTempo = document.createElement('img')
-        imgMinTempo.src = './src/assets/img/minTemp.png'
+        imgMinTempo.classList.add('icon-details')
+        imgMinTempo.src = 'https://cdn-icons-png.flaticon.com/128/5118/5118028.png'
 
         const divMaxTemp = document.createElement('div')
         divMaxTemp.classList.add('temps__max')
         const maxTemp = document.createElement('span')
         maxTemp.textContent = `${this.maxTemp.slice(0,2).replace('.', '')}°C`
         const imgMaxTempo = document.createElement('img')
-        imgMaxTempo.src = './src/assets/img/maxTemp.png'
+        imgMaxTempo.classList.add('icon-details')
+        imgMaxTempo.src = 'https://cdn-icons-png.flaticon.com/512/2041/2041644.png'
 
         // Terceira coluna
 
@@ -104,7 +106,7 @@ class MainCard extends HTMLElement {
         windSpan.textContent = `${this.windVelocity} km/h`;
         const iconWindDeg = document.createElement('img')
         iconWindDeg.classList.add('arrow-wind')
-        iconWindDeg.src = '../../../../src/assets/img/arrowWind.png'
+        iconWindDeg.src = 'https://cdn-icons-png.flaticon.com/512/60/60534.png'
 
         divWind.appendChild(windImage)
         divWind.appendChild(windSpan);
@@ -253,10 +255,11 @@ class MainCard extends HTMLElement {
         }
 
         .icon-details {
-            height: 30px;
+            max-height: 30px;
         }
 
         .arrow-wind {
+            height: 20px;
             transform: rotate(${this.windDeg}deg);
         }
         `
