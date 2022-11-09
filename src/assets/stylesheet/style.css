@@ -1,0 +1,56 @@
+body {
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100vw;
+  padding: 90px;
+  overflow: hidden;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards-container {
+  width: fit-content;
+  max-width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  overflow: scroll;
+  gap: 70px;
+  padding: 50px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+}
+
+#day {
+  background: linear-gradient( to bottom, #8FEDFF 50.25%, #016887);
+}
+
+#night {
+  background: linear-gradient(to bottom, #144176 50.25%, #0087B1);
+  background-image: url(../img/night_sky.png);
+  background-size: cover;
+}
+
+.rain-cloud {
+  position: absolute;
+  left: 0;
+  top: -7rem;
+  z-index: -1;
+  animation: cloudAnimation 60s infinite;
+}
+
+@keyframes cloudAnimation {
+  0% {
+    transform: translateX(-25rem);
+  }
+  50% {
+    transform: translateX(0rem);
+  }
+  100% {
+    transform: translateX(-25rem);
+  }
+}

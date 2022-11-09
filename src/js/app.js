@@ -1,4 +1,5 @@
 import './components/MainCard/MainCard.js'
+
 import fetchWeather from "./apis/fetchWeather.js";
 const form = document.querySelector('form')
 
@@ -21,7 +22,7 @@ const criaCardPrincipal = (data) => {
   
 }
 
-const cleanDiv = () => {
+export const cleanDiv = () => {
   mainCardContainer.innerHTML = '';
 }
 
@@ -33,8 +34,6 @@ form.addEventListener('submit', async (e) => {
     cleanDiv();
   };
   criaCardPrincipal(data);
-
-
 })
 
 // const weather = await fetchWeather(search);

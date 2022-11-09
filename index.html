@@ -6,9 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Clima</title>
   <script src="./src/js/app.js" defer type="module"></script>
+  <script src="./src/js/main.js" type="module" defer></script>
 
   <link rel="stylesheet" href="src/assets/stylesheet/styles.css">
   <script src="https://kit.fontawesome.com/e2a54895da.js" crossorigin="anonymous"></script>
+  <script type="module" defer>
+    import'./src/js/weatherCard.js';
+  </script>
 
 </head>
 <body>
@@ -17,8 +21,11 @@
     <button type="submit">Enviar</button>
   </form>
   <div class="main-card__container">
-    <main-card></main-card>
+    <main-card ></main-card>
   </div>
+  <ul class="cards-container">
+    
+  </ul>
   
 <!--  <div class="card-principal">-->
 <!--    <div class="first-column">-->
